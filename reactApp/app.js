@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-const dummyData = ["eat", "code", "sleep"]
+const dummyData = [{taskTest: "eat", completed: false}, {taskTest:"code", completed:true}]
 
 class Todo extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Todo extends React.Component {
   }
   render() {
     return (
-      <li><button type="button">X</button>{this.props.task}</li>
+      <li><button type="button">X</button> {this.props.task.completed ? <strike>{this.props.task.taskTest}</strike> : this.props.task.taskTest} </li>
     )
   }
 }
